@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-      <template v-for="(item,key) in slides">
+      <template v-for="(item,key) in picList">
         <figure
           itemprop="associatedMedia"
           itemscope
@@ -58,25 +58,53 @@ export default {
   data() {
     return {
       deg: 0,
+      picList: [],
     };
-  },
-  created() {
-
   },
   methods: {
     rotate() {
       this.deg = this.deg + 90;
       for (const item of document.querySelectorAll('.pswp__img')) {
-        console.log(item.style.transform.split(' rotate')[ 0 ]);
         item.style.transform = `rotate(${this.deg}deg)`;
       }
     },
+
     rotateRelease() {
-      this.deg = 0;
       for (const item of document.querySelectorAll('.pswp__img')) {
-        item.style.transform = item.style.transform.split(' rotate')[ 0 ];
+        item.style.transform = '';
       }
     },
+
+    loadImage(url) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = url;
+        image.onload = () => {
+          resolve(image);
+        };
+
+        image.onerror = () => {
+          reject('获取图片错误');
+        };
+      });
+    },
+  },
+
+  created() {
+    for (const item of this.slides) {
+      if (!('w' in item && 'h' in item)) {
+        this.loadImage(item.src).then(image => {
+          this.picList.push({
+            w: image.width,
+            h: image.height,
+            src: item.src,
+            msrc: item.msrc,
+            alt: item.alt || '',
+            title: item.title || '',
+          });
+        });
+      }
+    }
   },
 };
 </script>

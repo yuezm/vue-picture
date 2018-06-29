@@ -54,7 +54,7 @@ const VuePreview = {
             const pswpElement = document.querySelectorAll('.pswp')[ 0 ];
             const items = parseThumbnailElements(galleryElement);
             // define photoSwipeOptions (if needed)
-            const photoSwipeOptions = {
+            const photoSwipeOptions = Object.assign({
               // define gallery index (for URL)
               galleryUID: galleryElement.getAttribute('data-pswp-uid'),
               getThumbBoundsFn(index) {
@@ -64,8 +64,7 @@ const VuePreview = {
                 const rect = thumbnail.getBoundingClientRect();
                 return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
               },
-              ...options,
-            };
+            }, options);
             // PhotoSwipe opened from URL
             if (fromURL) {
               if (photoSwipeOptions.galleryPIDs) {
