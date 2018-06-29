@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-      <template v-for="item in slides">
+      <template v-for="(item,key) in slides">
         <figure
           itemprop="associatedMedia"
           itemscope
-          itemtype="http://schema.org/ImageObject">
+          itemtype="http://schema.org/ImageObject" :key="key">
           <a :href="item.src" itemprop="contentUrl" :data-size="'' + item.w + 'x' + item.h">
             <img :src="item.msrc" :alt="item.alt" itemprop="thumbnail"/>
           </a>
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       deg: 0,
-    }
+    };
   },
   created() {
 
@@ -77,8 +77,8 @@ export default {
         item.style.transform = item.style.transform.split(' rotate')[ 0 ];
       }
     },
-  }
-}
+  },
+};
 </script>
 <style>
   @import '~photoswipe/dist/photoswipe.css';
