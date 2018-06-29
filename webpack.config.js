@@ -7,13 +7,13 @@ module.exports = {
   module: {
     rules: [
       // use babel-loader for js files
-      {test: /\.js$/, loader: 'babel-loader'},
+      { test: /\.js$/, loader: 'babel-loader' },
       // use vue-loader for .vue files
-      {test: /\.vue$/, loader: 'vue-loader'},
+      { test: /\.vue$/, loader: 'vue-loader' },
       // use css-loader for .css files
-      {test: /\.css/, loader: 'css-loader'},
+      { test: /\.css/, loader: 'css-loader' },
       // use url-loader for .(png|jpe?g|gif|svg) files
-      {test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: 'url-loader'}
+      { test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: 'url-loader' }
     ]
   },
   // default for pretty much every project
@@ -23,8 +23,8 @@ module.exports = {
     // specify your output directory...
     path: path.resolve(__dirname, './dist'),
     // and filename
-    filename: 'vue-preview.min.js',
-    library: 'VuePreview',
+    filename: 'vue-picture.min.js',
+    library: 'VuePicture',
     libraryTarget: 'umd',
     umdNamedDefine: true
   }

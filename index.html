@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>vue-preview</title>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <script src="dist/vue-preview.min.js"></script>
+  <script src="dist/vue-picture.min.js"></script>
   <style>
     html, body {
       height: 100%;
@@ -34,12 +34,12 @@
   <h1>Vue Preview</h1>
   <div>
     <h5>Gallery one</h5>
-    <vue-preview :slides="slide1" @close="handleClose"></vue-preview>
-    <vue-preview :slides="slide2" @close="handleClose"></vue-preview>
+    <vue-picture :slides="slide1" @close="handleClose"></vue-picture>
+    <vue-picture :slides="slide2" @close="handleClose"></vue-picture>
   </div>
 </div>
 <script>
-Vue.use(VuePreview);
+Vue.use(VuePicture);
 const app = new Vue({
   el: '#app',
   data() {

@@ -2,9 +2,9 @@ import PreviewComponent from './preview.vue';
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
 
-const VuePreview = {
+const VuePicture = {
   install(Vue, options) {
-    Vue.component('VuePreview', {
+    Vue.component('VuePicture', {
       mixins: [ PreviewComponent ],
       props: {
         slides: Array,
@@ -94,7 +94,7 @@ const VuePreview = {
             const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, photoSwipeOptions);
             gallery.init();
             // Gallery starts closing
-            gallery.listen('close', function() {
+            gallery.listen('close', function () {
               self.$emit('close');
             });
           };
@@ -108,7 +108,7 @@ const VuePreview = {
             e.preventDefault ? e.preventDefault() : e.returnValue = false;
             const eTarget = e.target || e.srcElement;
             // find root element of slide
-            const clickedListItem = closest(eTarget, function(el) {
+            const clickedListItem = closest(eTarget, function (el) {
               return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
             });
             if (!clickedListItem) {
@@ -181,7 +181,7 @@ const VuePreview = {
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VuePreview);
+  window.Vue.use(VuePicture);
 }
 
-export default VuePreview;
+export default VuePicture;

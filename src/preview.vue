@@ -115,4 +115,12 @@ export default {
   .pswp__button--rotate {
     background: url("./assert/img/rotate.png") center no-repeat;
   }
+
+  .my-gallery {
+    width: 100%;
+  }
+
+  .my-gallery img {
+    width: 100%;
+  }
 </style>
