@@ -16,7 +16,7 @@
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
-        <div class="pswp__container" :style="rotateStyle">
+        <div class="pswp__container">
           <div class="pswp__item"></div>
           <div class="pswp__item"></div>
           <div class="pswp__item"></div>
@@ -54,22 +54,25 @@
   </div>
 </template>
 <script>
+
+window.deg = 0;
 export default {
+  name: 'preview',
   data() {
     return {
-      deg: 0,
       picList: [],
     };
   },
   methods: {
     rotate() {
-      this.deg = this.deg + 90;
+      window.deg = window.deg + 90;
       for (const item of document.querySelectorAll('.pswp__img')) {
-        item.style.transform = `rotate(${this.deg}deg)`;
+        item.style.transform = `rotate(${window.deg}deg)`;
       }
     },
 
     rotateRelease() {
+      window.deg = 0;
       for (const item of document.querySelectorAll('.pswp__img')) {
         item.style.transform = '';
       }
@@ -109,8 +112,8 @@ export default {
 };
 </script>
 <style>
-  @import '~photoswipe/dist/photoswipe.css';
-  @import '~photoswipe/dist/default-skin/default-skin.css';
+  @import 'photoswipe/dist/photoswipe.css';
+  @import 'photoswipe/dist/default-skin/default-skin.css';
 
   .pswp__button--rotate {
     background: url("./assert/img/rotate.png") center no-repeat;

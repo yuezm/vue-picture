@@ -1,8 +1,8 @@
-import PreviewComponent from './preview.vue';
+import PreviewComponent from './src/preview.vue';
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
 
-const VuePicture = {
+export default {
   install(Vue, options) {
     Vue.component('VuePicture', {
       mixins: [ PreviewComponent ],
@@ -65,6 +65,7 @@ const VuePicture = {
                 return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
               },
             }, options);
+
             // PhotoSwipe opened from URL
             if (fromURL) {
               if (photoSwipeOptions.galleryPIDs) {
@@ -94,7 +95,8 @@ const VuePicture = {
             const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, photoSwipeOptions);
             gallery.init();
             // Gallery starts closing
-            gallery.listen('close', function () {
+            gallery.listen('close', () => {
+              window.deg = 0;
               self.$emit('close');
             });
           };
@@ -179,9 +181,3 @@ const VuePicture = {
     });
   },
 };
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VuePicture);
-}
-
-export default VuePicture;

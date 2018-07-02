@@ -1,6 +1,6 @@
 # vue-picture
 
-> 一 A Vue Integrated [vue-preview](https://github.com/yuezm/vue-picture) Image Preview Plugin
+> A Vue Integrated [vue-preview](https://github.com/yuezm/vue-picture) Image Preview Plugin
 > On the basis of the vue-preview, the image height and width adaptation is added,and the rotation has been added.
 ## Requirements
 
@@ -25,7 +25,7 @@ import VuePicture from 'vue-picture'
  Vue.use(VuePicture)
 
  // with parameters install
- Vue.use(VuePicture, {
+ Vue.use(preview, {
    mainClass: 'pswp--minimal--dark',
    barsSize: {top: 0, bottom: 0},
    captionEl: false,
@@ -47,7 +47,7 @@ import VuePicture from 'vue-picture'
 
     <script>
 
-   **if the slides item has no w or h,then it will Adaptive**
+   *** if the slides item has no w or h,then it will adaptive ***
     export default {
         data () {
           return {
