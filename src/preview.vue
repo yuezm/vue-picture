@@ -56,6 +56,9 @@
 <script>
 
 window.deg = 0;
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
+
 export default {
   name: 'preview',
   data() {
@@ -111,10 +114,7 @@ export default {
   },
 };
 </script>
-<style>
-  @import 'photoswipe/dist/photoswipe.css';
-  @import 'photoswipe/dist/default-skin/default-skin.css';
-
+<style scoped>
   .pswp__button--rotate {
     background: url("./assert/img/rotate.png") center no-repeat;
   }

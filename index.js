@@ -2,7 +2,8 @@ import PreviewComponent from './src/preview.vue';
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
 
-export default {
+
+const VuePicture = {
   install(Vue, options) {
     Vue.component('VuePicture', {
       mixins: [ PreviewComponent ],
@@ -181,3 +182,7 @@ export default {
     });
   },
 };
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(VuePicture)
+}
+export default VuePicture;

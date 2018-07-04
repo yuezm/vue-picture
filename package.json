@@ -4,23 +4,14 @@
   "description": "A Vue integration PhotoSwipe image preview plugin",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ext .js,.vue ./src --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LS1231/vue-preview.git"
+    "lint": "eslint --ext .js,.vue ./src --fix",
+    "build": "webpack -p"
   },
   "keywords": [
     "vue",
     "preview",
     "photoswipe"
   ],
-  "author": "LiuSong [347139089@qq.com] (https://ls1231.github.io/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/LS1231/vue-preview/issues"
-  },
-  "homepage": "https://github.com/LS1231/vue-preview#readme",
   "dependencies": {
     "photoswipe": "^4.1.2"
   },
@@ -28,17 +19,12 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",
     "babel-preset-env": "^1.6.1",
-    "cross-env": "^5.1.3",
     "css-loader": "^0.28.10",
     "eslint": "^4.11.0",
     "eslint-config-egg": "^6.0.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-plugin-vue": "^4.5.0",
-    "file-loader": "^1.1.11",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
     "url-loader": "^0.5.7",
-    "vue": "^2.5.13",
     "vue-loader": "^14.1.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^4.0.1",
