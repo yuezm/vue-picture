@@ -102,6 +102,9 @@ export default {
 
     checkImage(v) {
       for (const item of v || this.slides) {
+        if (!item.src) {
+          continue;
+        }
         if (!('w' in item && 'h' in item)) {
           this.loadImage(item.src).then(image => {
             this.picList.push({

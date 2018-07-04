@@ -11,7 +11,7 @@ const VuePicture = {
         slides: Array,
         classes: {
           default: function () {
-            return options.classes || [];
+            return options && options.classes || [];
           }
         },
       },
@@ -65,6 +65,9 @@ const VuePicture = {
               galleryUID: galleryElement.getAttribute('data-pswp-uid'),
               getThumbBoundsFn(index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
+                if (!items.length) {
+                  return { x: 0, y: 0, w: 0 };
+                }
                 const thumbnail = items[ index ].el.getElementsByTagName('img')[ 0 ]; // find thumbnail
                 const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
                 const rect = thumbnail.getBoundingClientRect();
