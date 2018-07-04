@@ -1,7 +1,6 @@
 # vue-picture
 
 > A Vue Integrated [vue-preview](https://github.com/yuezm/vue-picture) Image Preview Plugin
-> On the basis of the vue-preview, the image height and width adaptation is added,and the rotation has been added.
 ## Requirements
 
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
@@ -13,8 +12,9 @@
 ## Usage
 
 Notice:
- - This plugin currently support vue2.5 and above
-
+ - **需要至少vue2.5以上版本**
+ - **在vue-preview基础上,增加旋转功能**
+ - **如果未传入w或者h,则宽高自适应**
 
 ```
 -- app.js
@@ -38,6 +38,7 @@ import VuePicture from 'vue-picture'
 ```
 
 
+
 ```
 -- template
 
@@ -47,7 +48,6 @@ import VuePicture from 'vue-picture'
 
     <script>
 
-   *** if the slides item has no w or h,then it will adaptive ***
     export default {
         data () {
           return {
@@ -65,8 +65,6 @@ import VuePicture from 'vue-picture'
                 msrc: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg',
                 alt: 'picture2',
                 title: 'Image Caption 2',
-                w: 1200,
-                h: 900
               }
             ]
           }
