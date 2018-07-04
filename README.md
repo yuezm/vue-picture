@@ -26,6 +26,7 @@ import VuePicture from 'vue-picture'
 
  // with parameters install
  Vue.use(preview, {
+   classes:['pwsp'], //传入控制整个页面的css类名
    mainClass: 'pswp--minimal--dark',
    barsSize: {top: 0, bottom: 0},
    captionEl: false,

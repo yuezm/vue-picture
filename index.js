@@ -9,6 +9,11 @@ const VuePicture = {
       mixins: [ PreviewComponent ],
       props: {
         slides: Array,
+        classes: {
+          default: function () {
+            return options.classes || [];
+          }
+        },
       },
       methods: {
         initPhotoSwipeFromDOM(gallerySelector) {

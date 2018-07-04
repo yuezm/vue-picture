@@ -13,7 +13,7 @@
         </figure>
       </template>
     </div>
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" :class="classes">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
         <div class="pswp__container">
@@ -66,6 +66,11 @@ export default {
       picList: [],
     };
   },
+  watch: {
+    slides: function () {
+      this.checkImage(this.slides);
+    }
+  },
   methods: {
     rotate() {
       window.deg = window.deg + 90;
@@ -94,23 +99,27 @@ export default {
         };
       });
     },
+
+    checkImage(v) {
+      for (const item of v || this.slides) {
+        if (!('w' in item && 'h' in item)) {
+          this.loadImage(item.src).then(image => {
+            this.picList.push({
+              w: image.width,
+              h: image.height,
+              src: item.src,
+              msrc: item.msrc,
+              alt: item.alt || '',
+              title: item.title || '',
+            });
+          });
+        }
+      }
+    }
   },
 
   created() {
-    for (const item of this.slides) {
-      if (!('w' in item && 'h' in item)) {
-        this.loadImage(item.src).then(image => {
-          this.picList.push({
-            w: image.width,
-            h: image.height,
-            src: item.src,
-            msrc: item.msrc,
-            alt: item.alt || '',
-            title: item.title || '',
-          });
-        });
-      }
-    }
+    this.checkImage(this.slides);
   },
 };
 </script>
