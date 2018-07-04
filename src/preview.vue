@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gallery-container">
     <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
       <template v-for="(item,key) in picList">
         <figure
@@ -7,7 +7,7 @@
           itemscope
           itemtype="http://schema.org/ImageObject" :key="key">
           <a :href="item.src" itemprop="contentUrl" :data-size="'' + item.w + 'x' + item.h">
-            <img :src="item.msrc" :alt="item.alt" itemprop="thumbnail"/>
+            <img :src="item.msrc" :alt="item.alt" class="gallery-small-img" itemprop="thumbnail"/>
           </a>
           <figcaption style="display: none" itemprop="caption description">{{item.title}}</figcaption>
         </figure>
