@@ -1,11 +1,14 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'vue-picture.min.js',
+    filename: 'vue-picture.js',
+    library: 'vuePicture',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
@@ -28,13 +31,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
+      { test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, loader: 'url-loader' }
     ]
   },
   resolve: {
