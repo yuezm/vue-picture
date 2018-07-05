@@ -43,7 +43,7 @@
 <script>
 const app = new Vue({
   el: '#app',
-  data() {
+  data: function () {
     return {
       slide1: [
         {
@@ -76,7 +76,7 @@ const app = new Vue({
     }
   },
   methods: {
-    handleClose() {
+    handleClose: function () {
       console.log('close event')
     }
   }
