@@ -2,7 +2,7 @@
   "name": "vue-picture",
   "version": "1.0.4",
   "description": "A Vue integration PhotoSwipe image preview plugin",
-  "main": "",
+  "main": "/dist/vue-picture.js",
   "scripts": {
     "lint": "eslint --ext .js,.vue ./src --fix",
     "build": "webpack -p"
