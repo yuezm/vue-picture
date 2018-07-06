@@ -75,14 +75,14 @@ export default {
     rotate() {
       window.deg = window.deg + 90;
       for (const item of document.querySelectorAll('.pswp__img')) {
-        item.style.transform = `rotate(${window.deg}deg)`;
+        item.className = `pswp__img rotate-${window.deg % 360}`;
       }
     },
 
     rotateRelease() {
       window.deg = 0;
       for (const item of document.querySelectorAll('.pswp__img')) {
-        item.style.transform = '';
+        item.className = 'pswp__img';
       }
     },
 

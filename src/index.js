@@ -1,6 +1,7 @@
 import PreviewComponent from './preview.vue';
 import PhotoSwipe from 'photoswipe/dist/photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
+import './assert/style/style.css';
 
 
 const VuePicture = {
