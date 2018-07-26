@@ -1,0 +1,8 @@
+.idea/
+/test
+.eslintignore
+..eslintrc.js
+.gitignore
+.gitlab-ci.yml
+.npmignore
+node_modules

@@ -1,6 +1,6 @@
 {
-  "name": "vue-picture",
-  "version": "1.0.4",
+  "name": "vue2-picture",
+  "version": "1.0.5",
   "description": "A Vue integration PhotoSwipe image preview plugin",
   "main": "/dist/vue-picture.js",
   "scripts": {
@@ -10,7 +10,10 @@
   "keywords": [
     "vue",
     "preview",
-    "photoswipe"
+    "photoswipe",
+    "picture",
+    "rotate",
+    "zoom in and out"
   ],
   "dependencies": {
     "photoswipe": "^4.1.2"
@@ -35,5 +38,18 @@
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuezm/vue-picture.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuezm/vue-picture/issues"
+  },
+  "homepage": "https://github.com/yuezm/vue-picture#readme",
+  "author": "yuezm"
 }

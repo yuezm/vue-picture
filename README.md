@@ -1,6 +1,6 @@
 # vue-picture
 
-> A Vue Integrated [vue-preview](https://github.com/yuezm/vue-picture) Image Preview Plugin
+> A Vue Integrated [vue-preview](https://github.com/yuezm/vue-picture)  Image Preview Plugin
 ## Requirements
 
 [PhotoSwipe](https://github.com/dimsemenov/PhotoSwipe)
@@ -16,17 +16,18 @@ Notice:
  - **在vue-preview基础上,增加旋转功能**
  - **如果未传入w或者h,则宽高自适应**
 
+Download
+- npm i -S vue2-picture
 ```
 -- app.js
 
-import VuePicture from 'vue-picture'
+import VuePicture from 'vue2-picture'
 
  // defalut install
  Vue.use(VuePicture)
 
  // with parameters install
  Vue.use(preview, {
-   classes:['pwsp'], //传入控制整个页面的css类名
    mainClass: 'pswp--minimal--dark',
    barsSize: {top: 0, bottom: 0},
    captionEl: false,
@@ -38,13 +39,11 @@ import VuePicture from 'vue-picture'
  })
 ```
 
-
-
 ```
 -- template
 
     <template>
-      <vue-picture :slides="slides" @close="handleClose"></vue-preview>
+      <vue-picture :slides="slides"></vue-preview>
     </template>
 
     <script>
@@ -70,11 +69,6 @@ import VuePicture from 'vue-picture'
             ]
           }
         },
-        methods: {
-          handleClose () {
-            console.log('close event')
-          }
-        }
       }
     </script>
 ```

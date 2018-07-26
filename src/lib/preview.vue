@@ -1,6 +1,6 @@
 <template>
   <div class="gallery-container">
-    <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    <div class="my-gallery" @click="onThumbnailsClick" itemscope itemtype="http://schema.org/ImageGallery">
       <template v-for="(item,key) in picList">
         <figure
           itemprop="associatedMedia"
@@ -13,7 +13,7 @@
         </figure>
       </template>
     </div>
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" :class="classes">
+    <div  class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
         <div class="pswp__container">
@@ -128,7 +128,7 @@ export default {
 </script>
 <style scoped>
   .pswp__button--rotate {
-    background: url("./assert/img/rotate.png") center no-repeat;
+    background: url("../assert/img/rotate.png") center no-repeat;
   }
 
   .my-gallery {
