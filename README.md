@@ -8,6 +8,7 @@
 ## Demo
     git clone https://github.com/yuezm/vue-picture.git
     open index.html in browser
+或者访问[VuePicture示例](http://47.98.176.169/VuePicture/)
 
 ## Usage
 
